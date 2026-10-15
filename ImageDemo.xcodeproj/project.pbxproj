@@ -256,6 +256,9 @@
 				DEVELOPMENT_TEAM = CZDWR4S735;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "需要使用相机拍摄照片，用来生成贴纸";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "需要把生成的贴纸保存到相册";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "需要读取你选择的照片，用来生成贴纸";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -288,6 +291,9 @@
 				DEVELOPMENT_TEAM = CZDWR4S735;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "需要使用相机拍摄照片，用来生成贴纸";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "需要把生成的贴纸保存到相册";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "需要读取你选择的照片，用来生成贴纸";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
