@@ -9,6 +9,7 @@ import SwiftUI
 import UIKit
 
 struct ContentView: View {
+    @Binding var page: StudioPage
     @State private var sticker: UIImage?
     @State private var backdrop: StickerBackdrop = .peach
     @State private var photoItem: PhotosPickerItem?
@@ -32,6 +33,7 @@ struct ContentView: View {
 
             ScrollView {
                 VStack(alignment: .leading, spacing: 18) {
+                    StudioPager(page: $page)
                     header
                     preview
                     backdropPicker
@@ -117,7 +119,8 @@ struct ContentView: View {
                 }
             }
         }
-        .aspectRatio(4.0 / 5.0, contentMode: .fit)
+        .frame(maxWidth: .infinity)
+        .frame(height: 400)
         .clipShape(cardShape)
         .overlay {
             cardShape.strokeBorder(Color.white.opacity(0.8), lineWidth: 1.5)
@@ -345,7 +348,7 @@ struct ContentView: View {
     }
 }
 
-private struct PhotoFile: Transferable {
+struct PhotoFile: Transferable {
     let data: Data
 
     static var transferRepresentation: some TransferRepresentation {
@@ -355,7 +358,7 @@ private struct PhotoFile: Transferable {
     }
 }
 
-private enum PhotoLibrary {
+enum PhotoLibrary {
     static func save(_ image: UIImage) async throws {
         let status = await addAuthorization()
         guard status == .authorized || status == .limited else {
@@ -391,5 +394,5 @@ private enum PhotoLibrary {
 }
 
 #Preview {
-    ContentView()
+    ContentView(page: .constant(.sticker))
 }
